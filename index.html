@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Modulo ABM - Laboratorio </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="banner">
+            <div class="text">
+                <h2> Laboratorio Inc </h2>
+                <h3> Formulario </h3>
+            </div>
+            <div class="img-banner">
+                <img src="labIcon.png" alt="Laboratorio">
+            </div> 
+        </div>
+            <nav class="nav">
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#alta">
+                    Alta
+                </button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#baja">
+                    Baja
+                </button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modificar">
+                    Modificar
+                </button>
+            </nav>
+    </header>
+    <div>
+        <h1> Modo de uso </h1>
+        <h4> ES OBLIGATORIO CUMPLIR CON EL PROTOCOLO DE INGRESO DEL PERSONAL TODA VEZ Y PARA TODO EL PERSONAL QUE
+            INGRESE AL ESTABLECIMIENTO.</h4>
+        <h5> Poner GUION en los casos que sea negativo para los sintomas. </h5>
+        <h5> Poner la palabra SI en caso de ser para los sintomas.</h5>   
+        <div class="text-center">
+            <form method="post" action="get.php">
+                <button class="btn btn-info"> Ver Formulario </button>
+            </form>
+        </div>
+        <form method="post" action="alta.php">
+            <div class="modal fade" id="alta" tabindex="-1" aria-labelledby="alta" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="alta"> Registrar Alta </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>    
+                            <h6 for="fecha"> Fecha: </h6>
+                            <input class="form-control" type="date" class="datepicker" name="fecha" required><br>
+                            
+                            <h6 for="hora"> Hora: </h6>
+                            <input class="form-control" type="time" name="hora" required><br>
+                            
+                            <h6 for="hora"> Nombre: </h6>
+                            <input type="text" name="nombre" class="form-control" placeholder="">
+                            
+                            <h6 for="hora"> Apellidos: </h6>
+                            <input type="text" name="apellidos" class="form-control" placeholder="">
+                            
+                            <h6 for="temperatura"> Temperatura: </h6>
+                            <input type="number" class="form-control form-control-sm" step="0.1" name="temperatura" required><br>
+                            
+                            <h6 for="tos">Tos:</h6>
+                            <select class="form-select form-select-sm" name="tos" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="SI">SI</option>
+                                <option value="-">-</option>
+                            </select><br>
+                            
+                            <h6 for="insuficiencia_respiratoria"> Insuficiencia Respiratoria: </h6>
+                            <select class="form-select form-select-sm" name="insuficiencia_respiratoria" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="SI">SI</option>
+                                <option value="-">-</option>
+                            </select><br>
+                            
+                            <h6 for="dolor_garganta"> Dolor de Garganta: </h6>
+                            <select class="form-select form-select-sm" name="dolor_garganta" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="SI"> SI </option>
+                                <option value="-">-</option>
+                            </select><br>
+
+                            <h6 for="perdida_olfato">Pérdida del Olfato: </h6>
+                            <select class="form-select form-select-sm" name="perdida_olfato" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="SI">SI</option>
+                                <option value="-">-</option>
+                            </select><br>
+                        
+                            <h6 for="perdida_gusto">Pérdida del Gusto:</h6>
+                            <select class="form-select form-select-sm" name="perdida_gusto" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="SI">SI</option>
+                                <option value="-">-</option>
+                            </select><br>
+                        
+                            <h6 for="otros_sintomas">Otros Síntomas:</h6>
+                            <textarea class="form-control" placeholder="" id="floatingTextarea" name="otros_sintomas"></textarea><br>
+                        
+                            <h6 for="contacto_aislamiento">Estuvo en contacto con alguien en aislamiento:</h6>
+                            <select class="form-select form-select-sm" name="contacto_aislamiento" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="SI">SI</option>
+                                <option value="-">-</option>
+                            </select><br>
+                    
+                            <h6 for="contacto_viajero"> Estuvo en contacto con alguien que viajó en los últimos días: </h6>
+                            <select class="form-select form-select-sm" name="contacto_viajero" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="SI">SI</option>
+                                <option value="-">-</option>
+                            </select><br>
+                    
+                            <h6 for="viajes_lugar">Viajes (Lugar):</h6>
+                                <input class="form-control form-control-sm" type="text" name="viajes_lugar"><br>
+                    
+                            <h6 for="observaciones">Observaciones:</h>
+                                <textarea class="form-control" placeholder="" id="floatingTextarea" name="observaciones"></textarea><br>
+                        </div>
+                        <figure>
+                            <figcaption class="blockquote-footer">
+                                Nota del editor: <cite title="Source Title"> Recuerde que tiene que seleccionar obligatoriamente una opcion para los sintomas antes de enviar el registro </cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" name="confirmar">Confirmar</button>
+                </div>
+            </div>
+                </div>
+              </div>
+            </form>
+    </div>
+    <div>
+        <form method="post" action="baja.php">
+            <div class="modal fade" id="baja" tabindex="-1" aria-labelledby="baja" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="baja"> Registrar Baja </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 for="id"> ID del registro a eliminar: </h5>
+                        <input class="form-control form-control-sm" type="number" name="id" required><br>
+                        <figure>
+                            <figcaption class="blockquote-footer">
+                                Nota del editor: <cite title="Source Title"> Verifique el formulario en la pagina principal (Ver Formulario) </cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="submit" class="btn btn-primary"> Confirmar </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </form>
+    </div>
+    <div>
+        <form method="post" action="update.php">
+            <div class="modal fade" id="modificar" tabindex="-1" aria-labelledby="modificar" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="modificar">Modificar Registro</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                            <h6 for="id">ID del registro a modificar:</h6>
+                            <input class="form-control form-control-sm" type="number" name="id" required><br>
+                            
+                            <h6 for="campo">Campo a modificar:</h6>
+                            <select class="form-select form-select-sm" name="campo" id="campo" required onchange="checkSintomas()">
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="fecha">Fecha</option>
+                                <option value="hora">Hora</option>
+                                <option value="nombre">Nombre</option>
+                                <option value="apellidos">Apellidos</option>
+                                <option value="temperatura">Temperatura</option>
+                                <option value="dolor_garganta">Dolor de Garganta</option>
+                                <option value="perdida_olfato">Perdida del Olfato</option>
+                                <option value="perdida_gusto">Perdida del Gusto</option>
+                                <option value="otros_sintomas">Otros Sintomas</option>
+                                <option value="contacto_aislamiento">Contacto Aislamiento</option>
+                                <option value="contacto_viajero">Contacto Viajero</option>
+                                <option value="viajes_lugar">Viaje(Lugar)</option>
+                                <option value="observaciones">Observaciones</option>
+                            </select><br>
+                        
+                            <h6 for="valor"> Nuevo valor: </h6>
+                            <span id="valorInputContainer">
+                                <input class="form-control form-control-sm" type="text" name="valor" required>
+                            </span><br>
+                            
+                            <figure>
+                                <figcaption class="blockquote-footer">
+                                    Nota del editor: <cite title="Source Title"> Recuerde seleccionar un campo </cite>
+                                </figcaption>
+                            </figure>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary"> Confirmar </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </form>
+    </div>
+    <script>
+        function checkSintomas() {
+            var campoSelect = document.getElementById("campo");
+            var valorInputContainer = document.getElementById("valorInputContainer");
+
+            if (campoSelect.value === "dolor_garganta" || campoSelect.value === "perdida_olfato" || campoSelect.value === "perdida_gusto" || campoSelect.value === "contacto_aislamiento" || campoSelect.value === "contacto_viajero") {
+                valorInputContainer.innerHTML = `
+                    <select class="form-select form-select-sm" name="valor" required>
+                        <option value="" disabled selected> Seleccione una opción</option>
+                        <option value="SI">SI</option>
+                        <option value="-">-</option>
+                    </select>
+                `;
+            } else if (campoSelect.value === "fecha") {
+                valorInputContainer.innerHTML = `
+                    <input class="form-control" type="date" name="valor" required>
+                `;
+            } else if (campoSelect.value === "hora") {
+                valorInputContainer.innerHTML = `
+                    <input class="form-control" type="time" name="valor" required>
+                `;
+            } else {
+                valorInputContainer.innerHTML = `
+                    <input class="form-control form-control-sm" type="text" name="valor" required>
+                `;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

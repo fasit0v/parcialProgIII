@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+:root {
+    --dark-primary-color:#512DA8;
+    --light-primary-color:#D1C4E9;
+    --primary-color:#673AB7;
+    --text-icons:#FFFFFF;
+    --accent-color:#7C4DFF;
+    --primary-text:#212121;
+    --secondart-text:#757575;
+    --divider-color:#BDBDBD;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: var(--text-icons);
+    margin-top: 10px;
+}
+.header .banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--accent-color);
+    border-radius: 25px 25px 0px 0px
+}
+.header .banner .img-banner img {
+    height: 135px;
+    width: auto;
+    margin: 25px 0px;
+}
+.header .banner .text h2{
+    font-size: 4rem;
+    color: var(--text-icons)
+}
+.header .nav {
+    display: flex;
+    justify-content: space-around ;
+    width: 100%;
+    background-color: var(--primary-text);
+    border-radius: 0px 0px 25px 25px;
+}
+.header .nav a{
+    display: flex;
+    text-decoration: none ;
+    margin: 20px 0px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-icons);
+}
+.h1 tiempo{
+    color: #FF214F; 
+} 
