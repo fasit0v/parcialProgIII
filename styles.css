@@ -79,8 +79,8 @@ footer{
     text-align: center;
 }
 .footer-content h3{
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-size: 2.0rem;
+    font-weight: 600;
     text-transform: capitalize;
     line-height: 3rem;
 }
@@ -88,7 +88,7 @@ footer{
     max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
-    font-size: 14px;
+    font-size: 20px;
 }
 .socials{
     list-style: none;
@@ -101,6 +101,15 @@ footer{
     text-decoration: none;
     color: #fff;
 }
+.socials a i{
+    font-size: 100rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: var(--accent-color);
+}
+
 .footer-bottom{
     background-color: var(--dark-primary-color);
     width: 100vw;
